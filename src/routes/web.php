@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\BootstrapDemoController;
 use Illuminate\Support\Facades\Route;
 
 Route::view("/", "home");
@@ -10,10 +11,6 @@ Route::redirect("/home", "/", 301);
 Route::get("/test", TestController::class);
 
 Route::view("/about", "about");
-
-
-
-
 
 
 

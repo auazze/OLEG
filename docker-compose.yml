@@ -15,13 +15,13 @@ services:
       - ./src:/var/www/html
     ports:
       - "5173:5173"
-    command: >
-      sh -c "
-        cd /var/www/html &&
-        npm install &&
-        npm run dev -- --host 0.0.0.0 &
-        php-fpm
-      "
+#    command: >
+#      sh -c "
+#        cd /var/www/html &&
+#        npm install &&
+#        npm run dev -- --host 0.0.0.0 &
+#        php-fpm
+#      "
 
   postgres:
     image: postgres:16
