@@ -14,17 +14,10 @@ services:
     volumes:
       - ./src:/var/www/html
     ports:
-      - "5173:5173"
-#    command: >
-#      sh -c "
-#        cd /var/www/html &&
-#        npm install &&
-#        npm run dev -- --host 0.0.0.0 &
-#        php-fpm
-#      "
+      - "9000:9000"
 
   postgres:
-    image: postgres:16
+    image: postgres:16-alpine
     restart: always
     environment:
       POSTGRES_DB: oleg
@@ -41,6 +34,15 @@ services:
       dockerfile: composer.dockerfile
     volumes:
       - ./src:/var/www/html
+
+  node:
+    image: node:18-alpine
+    working_dir: /var/www/html
+    volumes:
+      - ./src:/var/www/html
+    command: npm run dev -- --host=0.0.0.0
+    ports:
+      - "5173:5173"
 
 volumes:
   pgdata:
