@@ -14,7 +14,8 @@ services:
     volumes:
       - ./src:/var/www/html
     ports:
-      - "9000:9000"
+      - "9000:9000" # это для пыхи
+      - "5173:5173" # это для vite
 
   postgres:
     image: postgres:16-alpine
@@ -34,15 +35,6 @@ services:
       dockerfile: composer.dockerfile
     volumes:
       - ./src:/var/www/html
-
-  node:
-    image: node:18-alpine
-    working_dir: /var/www/html
-    volumes:
-      - ./src:/var/www/html
-    command: npm run dev -- --host=0.0.0.0
-    ports:
-      - "5173:5173"
 
 volumes:
   pgdata:
