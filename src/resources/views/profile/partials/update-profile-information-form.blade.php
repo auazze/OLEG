@@ -1,3 +1,4 @@
+@php use Illuminate\Contracts\Auth\MustVerifyEmail; @endphp
 <section>
     <header>
         <h2 class="h5 fw-medium text-body">
@@ -16,6 +17,7 @@
         @csrf
         @method('patch')
 
+        {{-- Name --}}
         <div class="mb-3">
             <label for="name" class="form-label">{{ __('Name') }}</label>
             <input
@@ -33,6 +35,7 @@
             @enderror
         </div>
 
+        {{-- Email --}}
         <div class="mb-3">
             <label for="email" class="form-label">{{ __('Email') }}</label>
             <input
@@ -48,7 +51,7 @@
             <div class="invalid-feedback">{{ $message }}</div>
             @enderror
 
-            @if($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())
+            @if($user instanceof MustVerifyEmail && ! $user->hasVerifiedEmail())
                 <div class="mt-3">
                     <p class="small text-body mb-2">
                         {{ __('Your email address is unverified.') }}
@@ -67,6 +70,36 @@
                     @endif
                 </div>
             @endif
+        </div>
+
+        {{-- Phone --}}
+        <div class="mb-3">
+            <label for="phone" class="form-label">{{ __('Phone') }}</label>
+            <input
+                id="phone"
+                name="phone"
+                type="text"
+                value="{{ old('phone', $user->phone) }}"
+                class="form-control @error('phone') is-invalid @enderror"
+            />
+            @error('phone')
+            <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+
+        {{-- Address --}}
+        <div class="mb-3">
+            <label for="address" class="form-label">{{ __('Address') }}</label>
+            <input
+                id="address"
+                name="address"
+                type="text"
+                value="{{ old('address', $user->address) }}"
+                class="form-control @error('address') is-invalid @enderror"
+            />
+            @error('address')
+            <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
         </div>
 
         <div class="d-flex align-items-center gap-3 mt-3">
