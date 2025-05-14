@@ -7,9 +7,6 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get("/about", function () {
-    return view("about");
-});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -21,15 +18,11 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::middleware(['auth', 'role:admin'])
-    ->group(function () {
-        Route::get('/about', fn () => view('about'));
 
-        //Route::get('/secret-page', fn () => view('admin.secret'));
-    });
+require __DIR__ . '/auth.php';
+require __DIR__ . '/admin.php';
+require __DIR__ . '/user.php';
 
 Route::fallback(function () {
     return view("welcome");
 });
-
-require __DIR__.'/auth.php';

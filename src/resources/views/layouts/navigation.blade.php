@@ -31,7 +31,7 @@
                 </li>
             </ul>
 
-            <!-- User dropdown -->
+            <!-- user dropdown -->
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item dropdown">
                     <a
