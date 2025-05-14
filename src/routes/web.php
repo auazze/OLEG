@@ -4,7 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::get("/about", function () {
@@ -29,7 +29,7 @@ Route::middleware(['auth', 'role:admin'])
     });
 
 Route::fallback(function () {
-    return view("/");
+    return view("welcome");
 });
 
 require __DIR__.'/auth.php';

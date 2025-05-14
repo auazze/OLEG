@@ -1,8 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+<nav class="navbar navbar-expand-lg bg-dark border-bottom" data-bs-theme="dark">
     <div class="container">
         <!-- Logo -->
         <a class="navbar-brand d-flex align-items-center" href="{{ route('dashboard') }}">
-            <x-application-logo class="me-2" style="height: 36px; width: auto;" />
+            <x-application-logo class="me-2" style="height: auto; width: auto;" />
         </a>
 
         <!-- Toggler/collapsibe Button -->

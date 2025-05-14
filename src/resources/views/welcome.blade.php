@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-bs-theme="dark">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,7 +19,7 @@
 <body>
 
 <!-- Навбар Bootstrap -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
             {{ config('app.name', 'Laravel') }}
@@ -73,7 +73,7 @@
                 </li>
             </ul>
 
-            <a href="https://cloud.laravel.com" target="_blank" class="btn btn-dark">Deploy now</a>
+            <a href="https://cloud.laravel.com" target="_blank" class="btn btn-dark border-white">Deploy now</a>
         </div>
 
         <!-- Правая колонка -->

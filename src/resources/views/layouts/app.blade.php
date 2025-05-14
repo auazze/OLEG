@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-bs-theme="dark">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,11 +15,11 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
-<div class="min-vh-100 bg-light">
+<div class="min-vh-100" data-bs-theme="dark">
     @include('layouts.navigation')
 
     @isset($header)
-        <header class="bg-white shadow-sm">
+        <header class="bg-body shadow-sm">
             <div class="container py-3">
                 {{ $header }}
             </div>

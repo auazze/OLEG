@@ -1,9 +1,11 @@
 <x-app-layout>
     <x-slot name="header">
         <!-- Заголовок страницы в стиле Bootstrap -->
-        <h2 class="h2 mb-0">
-            {{ __('Dashboard') }}
-        </h2>
+        <div class="container" data-bs-theme="dark">
+            <h2 class="h2 mb-0">
+                {{ __('Dashboard') }}
+            </h2>
+        </div>
     </x-slot>
 
     <!-- Основной контент -->
